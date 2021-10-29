@@ -26,7 +26,7 @@ public class SpecialtyController {
     public List<Specialty> getSpecialties(){
         return specialtyService.getAll();
     }
-    @GetMapping("/{id")
+    @GetMapping("/{id}")
     public Optional<Specialty> getSpecialty(@PathVariable("id")int id){
         return specialtyService.getSpecialty(id);
     }
@@ -38,6 +38,13 @@ public class SpecialtyController {
         
         
     }
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Specialty update(@RequestBody Specialty s){ return specialtyService.update(s);}
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean deleteSpecialty(@PathVariable("id")int id){return specialtyService.deleteSpecialty(id);}
     
     
 }

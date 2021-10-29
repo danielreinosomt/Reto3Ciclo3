@@ -33,7 +33,7 @@ public class Doctor implements Serializable{
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "doctor")
     @JsonIgnoreProperties({"doctor","client"})
-    public List<Reservation> reservations;
+    private List<Reservation> reservations;
 
     public Integer getId() {
         return id;

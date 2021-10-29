@@ -25,5 +25,9 @@ public class DoctorRepository {
         public Doctor save(Doctor d){
             return doctorCrudRepository.save(d);
         }
+        public void delete(Doctor doctor){
+            doctorCrudRepository.delete(doctor);
+
+        }
     
 }
